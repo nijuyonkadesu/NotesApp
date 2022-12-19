@@ -1,7 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("com.squareup.sqldelight")
+    id("com.squareup.sqldelight") // #3
 }
 
 kotlin {
@@ -40,7 +40,7 @@ kotlin {
         val iosSimulatorArm64Main by getting
         val iosMain by creating {
             dependencies {
-                implementation("com.squareup.sqldelight:native-driver:1.5.3") // #3
+                implementation("com.squareup.sqldelight:native-driver:1.5.3") // #2
             }
             dependsOn(commonMain)
             iosX64Main.dependsOn(this)
@@ -56,6 +56,13 @@ kotlin {
             iosArm64Test.dependsOn(this)
             iosSimulatorArm64Test.dependsOn(this)
         }
+    }
+}
+
+sqldelight {
+    database("NoteDatabase"){
+        packageName = "com.njk.notes.database"
+        sourceFolders = listOf("sqldelight")
     }
 }
 
