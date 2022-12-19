@@ -8,7 +8,7 @@ data class Note(
     val title: String,
     val content: String,
     val colorHex: Long, /* using color in shared module, you cannot manage themes platform specific */
-    val created: LocalDateTime
+    val created: LocalDateTime /* it is an integer in actual database */
 ) {
     companion object {
         private val colors = listOf(RedOrangeHex, RedPinkHex, BabyBlueHex, VioletHex, LightGreenHex)
