@@ -1,7 +1,7 @@
 package com.njk.notes.domain.note
 
 /* Similar to Dao in ROOM database, through which we primarily interact with database */
-interface NoteDataStore {
+interface NoteDataSource {
     suspend fun getAllNotes(): List<Note> // Flow<List<Note>> is possible. But overhead occur with iOS. Issues will happen with coroutines & dispatchers. Overkill
     suspend fun getNoteById(id: Long): Note?
     suspend fun insertNote(note: Note)

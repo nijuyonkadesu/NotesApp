@@ -2,10 +2,10 @@ package com.njk.notes.data.note
 
 import com.njk.notes.database.NoteDatabase
 import com.njk.notes.domain.note.Note
-import com.njk.notes.domain.note.NoteDataStore
+import com.njk.notes.domain.note.NoteDataSource
 import com.njk.notes.domain.time.DateTimeUtil
 
-class SqlDelightNoteDataSource(db: NoteDatabase): NoteDataStore {
+class SqlDelightNoteDataSource(db: NoteDatabase): NoteDataSource {
 
     /**
      *  List of queries defined in sqldelight > database > note.sq
