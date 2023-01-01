@@ -52,10 +52,10 @@ class NoteDetailViewModel @Inject constructor(
             existingNoteId = it
             viewModelScope.launch {
                 existingNoteId?.let { id ->
-                    noteDataSource.getNoteById(id)?.let {
-                        savedStateHandle["noteTitle"] = it.title
-                        savedStateHandle["noteContent"] = it.content
-                        savedStateHandle["noteColor"] = it.colorHex
+                    noteDataSource.getNoteById(id)?.let { note ->
+                        savedStateHandle["noteTitle"] = note.title
+                        savedStateHandle["noteContent"] = note.content
+                        savedStateHandle["noteColor"] = note.colorHex
                     }
                 }
             }
