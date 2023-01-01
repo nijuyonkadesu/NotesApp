@@ -60,7 +60,7 @@ fun NoteListScreen(
                 contentAlignment = Alignment.Center
             ) {
                 HideableSearchTextField(
-                    text = state.searchString,
+                    text = state.searchText,
                     isSearchActive = state.isSearchActive,
                     onTextChange = viewModel::onSearchTextChange,
                     onSearchClick = viewModel::onToggleSearch,
@@ -74,7 +74,11 @@ fun NoteListScreen(
                     enter = fadeIn(),
                     exit = fadeOut()
                 ) {
-                    Text(text = "All Notes", fontWeight = FontWeight.Bold, fontSize = 30.sp)
+                    Text(
+                        text = "All Notes",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 30.sp
+                    )
                 }
             }
             LazyColumn(

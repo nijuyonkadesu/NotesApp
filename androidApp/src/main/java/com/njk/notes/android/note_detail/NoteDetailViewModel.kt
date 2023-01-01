@@ -16,7 +16,7 @@ class NoteDetailViewModel @Inject constructor(
     private val noteDataSource: NoteDataSource,
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
-
+// 1 41 17
     private val noteTitle = savedStateHandle.getStateFlow("noteTitle", initialValue = "")
     private val isNoteTitleTextFocused = savedStateHandle.getStateFlow("isNoteTitleTextFocused", initialValue = false)
     private val noteContent = savedStateHandle.getStateFlow("noteContent", initialValue = "")

@@ -29,7 +29,9 @@ class NodeListViewModel @Inject constructor(
 
     val state = combine(notes, searchText, isSearchActive) { notes, searchText, isSearchActive ->
         NoteListState(
-            notes = searchNotes.execute(notes, searchText)
+            notes = searchNotes.execute(notes, searchText),
+            searchText = searchText,
+            isSearchActive = isSearchActive
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), NoteListState())
     // Only runs stateIn when it is necessary
